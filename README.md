@@ -92,3 +92,65 @@ AVDTP_START
 ```plaintext
 HCI_Add_SCO_Connection
 ```
+### 🧵 RFCOMM vs L2CAP
+| **OSI Layer**    | **OSI Description**                 | **Bluetooth Equivalent**                     | **Bluetooth Description**                           |
+| ---------------- | ----------------------------------- | -------------------------------------------- | --------------------------------------------------- |
+| 7 - Application  | End-user software                   | Bluetooth Application (Media Player, Dialer) | Provides actual user-facing features                |
+| 6 - Presentation | Data translation, encryption        | Codec/Encryption handled in app or profiles  | SBC codec, optional encryption (SSP)                |
+| 5 - Session      | Session setup and management        | Bluetooth Profiles (HFP, A2DP, AVRCP, etc.)  | Defines signaling and roles                         |
+| 4 - Transport    | Reliable transport and flow control | RFCOMM, AVDTP, AVCTP, L2CAP                  | Streaming, control, or serial data                  |
+| 3 - Network      | Addressing, routing (IP)            | BNEP (used in PAN profile)                   | Used for IP over Bluetooth in PAN                   |
+| 2 - Data Link    | Framing, MAC, error detection       | L2CAP, HCI, Link Manager                     | Logical links, multiplexing, pairing                |
+| 1 - Physical     | Bit-level transmission              | Bluetooth Radio & Baseband                   | 2.4 GHz transmission, modulation, packet formatting |
+
+
+### 🧠 OSI Model Refresher
+| Layer | Name         | Description                                      |
+| ----- | ------------ | ------------------------------------------------ |
+| 7     | Application  | Interfaces with user apps like browsers, media   |
+| 6     | Presentation | Formats, encrypts, compresses data               |
+| 5     | Session      | Manages sessions between systems                 |
+| 4     | Transport    | End-to-end communication (e.g., TCP)             |
+| 3     | Network      | Routing, addressing (e.g., IP)                   |
+| 2     | Data Link    | Node-to-node transmission, MAC                   |
+| 1     | Physical     | Transmission over physical media (bits, signals) |
+
+
+### 🔄 OSI Model vs Bluetooth Stack
+| **OSI Layer**    | **OSI Description**                 | **Bluetooth Equivalent**                     | **Bluetooth Description**                           |
+| ---------------- | ----------------------------------- | -------------------------------------------- | --------------------------------------------------- |
+| 7 - Application  | End-user software                   | Bluetooth Application (Media Player, Dialer) | Provides actual user-facing features                |
+| 6 - Presentation | Data translation, encryption        | Codec/Encryption handled in app or profiles  | SBC codec, optional encryption (SSP)                |
+| 5 - Session      | Session setup and management        | Bluetooth Profiles (HFP, A2DP, AVRCP, etc.)  | Defines signaling and roles                         |
+| 4 - Transport    | Reliable transport and flow control | RFCOMM, AVDTP, AVCTP, L2CAP                  | Streaming, control, or serial data                  |
+| 3 - Network      | Addressing, routing (IP)            | BNEP (used in PAN profile)                   | Used for IP over Bluetooth in PAN                   |
+| 2 - Data Link    | Framing, MAC, error detection       | L2CAP, HCI, Link Manager                     | Logical links, multiplexing, pairing                |
+| 1 - Physical     | Bit-level transmission              | Bluetooth Radio & Baseband                   | 2.4 GHz transmission, modulation, packet formatting |
+
+
+### 📘 Common Bluetooth UUIDs
+| **Profile**         | **UUID** |
+| ------------------- | -------- |
+| HFP (Hands-Free)    | `0x111E` |
+| HFP (Audio Gateway) | `0x111F` |
+| A2DP Source         | `0x110A` |
+| A2DP Sink           | `0x110B` |
+| AVRCP Controller    | `0x110E` |
+| AVRCP Target        | `0x110C` |
+
+
+### 📌 Bluetooth Connection Types
+| **Type** | **Use**                                 |
+| -------- | --------------------------------------- |
+| ACL      | Asynchronous Connection-Less (Data)     |
+| SCO      | Synchronous Connection-Oriented (Voice) |
+| eSCO     | Enhanced SCO (Voice + retransmission)   |
+
+
+### 📖 References
+* [Bluetooth Core Specification](https://www.bluetooth.com/specifications/specs/)
+* Bluetooth Profiles: A2DP, HFP, AVRCP, SDP
+* OSI Model (ISO/IEC 7498-1)
+
+🛠️ Author
+Prepared by Gokul
